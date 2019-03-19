@@ -1,0 +1,32 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div style="text-align:center">
+  <h1>
+    Welcome to {{ title }}!
+  </h1>
+</div>
+<ul>
+  <li *ngFor="let data of eadata">
+    <div *ngFor="let cardata of data.cars">
+      <table>
+        <tr>
+          <td><div>{{cardata.make}}</div></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td></td><td><div>{{cardata.model}}</div></td>
+        </tr> 
+        <tr aria-colspan="3" style="text-align: right;width: 100px;"><td><div>{{ data.name }}</div></td></tr>       
+      </table>
+    </div>
+  </li>
+</ul>
+
+
+<!--George Motors
+      George 15
+        New York Car Show
+    Hondaka
+      Elisa
+        New York Car Show
+-->
+<router-outlet></router-outlet>
