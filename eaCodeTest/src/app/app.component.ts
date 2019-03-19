@@ -11,16 +11,22 @@ import { EaCodingService } from './service/eacoding.service';
 })
 export class AppComponent implements OnInit  {
 
-  title = 'ea-app';
+  title = 'EnergyAustralia Coding Test';
   public eadata: any;
+  public dataRetrieved = false;
 
   constructor(private eaCodingService: EaCodingService) {
   }
 
   ngOnInit(): void {
     this.eaCodingService.getData().subscribe(data => {
-      this.eadata = data;
-      console.log('this.eadata', this.eadata);
+      console.log('data', data);
+      if (data !== null && data !== '' && data !== undefined) {
+        this.dataRetrieved = true;
+        this.eadata = data;
+      } else {
+        this.dataRetrieved = false;
+      }
     });
   }
 }
